@@ -1,0 +1,19 @@
+.side-menu {
+  /*transform: translateX(-1000px);*/
+  transform: translateX(-100%);
+  transition: transform .25s;
+  opacity: .9;
+}
+
+.side-menu--active {
+  transform: translateX(0px);
+}
+
+.open-side-menu-button {
+  right: -50px;
+}
+
+.open-side-menu-button a {
+  width: 50px;
+  height: 50px;
+}

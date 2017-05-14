@@ -1,0 +1,8 @@
+.menuItems {
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.menuItem:hover {
+  background: #f5f5f5;
+}
+
