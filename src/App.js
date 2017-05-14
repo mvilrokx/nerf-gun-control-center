@@ -89,8 +89,8 @@ class App extends Component {
     }
   }
 
-  addMqttCredentials = (user, pwd) => {
-    this.setState({ mqttCredentials: {user, pwd} }, this.connectToMQTTServer)
+  addMqttCredentials = (user, pwd, server, port) => {
+    this.setState({ mqttCredentials: {user, pwd, server, port} }, this.connectToMQTTServer)
   }
 
   /*
@@ -102,8 +102,8 @@ class App extends Component {
 
     //HARDCODED FOR NOW
     this.setState({ nerfGuns: [
-      {key: '54:ff:34:e4:e9:5f', totalNrDartsFired: 10, online: true, firing: true, available: false},
-      {key: '43:ed:6e:03:43:4e', totalNrDartsFired: 100, online: true, firing: false, available: true},
+      {key: '54:ff:34:e4:e9:5f', totalNrDartsFired: 10, online: false, firing: false, available: false},
+      {key: '43:ed:6e:03:43:4e', totalNrDartsFired: 100, online: false, firing: false, available: false},
       {key: '31:12:1e:5d:99:66', totalNrDartsFired: 1000, online: false, firing: false, available: false},
     ] })
   }
