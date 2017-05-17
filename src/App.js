@@ -135,20 +135,26 @@ class App extends Component {
 
   addMqttCredentials = (user, pwd, server, port) => {
     this.setState({ mqttCredentials: {user, pwd, server, port} }, this.connectToMQTTServer)
+    sessionStorage.setItem('NerfCenterMQTTCredentials', JSON.stringify({user, pwd, server, port}))
   }
 
   /*
    * Lifecycle Handlers
    */
   componentWillMount() {
-    // this.connectToMQTTServer()
+    const storedCredentials = sessionStorage.getItem('NerfCenterMQTTCredentials')
+
+    // Auto Connect if connected before
+    if (storedCredentials) {
+      const {user, pwd, server, port} = JSON.parse(storedCredentials)
+      this.setState({ mqttCredentials: {user, pwd, server, port} }, this.connectToMQTTServer)
+    }
 
     //Fake Data
     this.setState({
       nerfGuns: [
         {key: '54:ff:34:e4:e9:5f', type: 'nerfgun', totalNrDartsFired: 10, online: false, firing: false, available: false},
-        {key: '43:ed:6e:03:43:4e', type: 'nerfgun', totalNrDartsFired: 100, online: false, firing: false, available: false},
-        // {key: '31:12:1e:5d:99:66', type: 'nerfgun', totalNrDartsFired: 1000, online: false, firing: false, available: false},
+        // {key: '43:ed:6e:03:43:4e', type: 'nerfgun', totalNrDartsFired: 100, online: false, firing: false, available: false},
       ]
     })
   }
