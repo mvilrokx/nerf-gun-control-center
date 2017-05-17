@@ -1,2 +1,0 @@
-.side-menu{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);transition:-webkit-transform .25s;transition:transform .25s;transition:transform .25s,-webkit-transform .25s;opacity:.9}.side-menu--active{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}.open-side-menu-button{right:-50px}.open-side-menu-button a{width:50px;height:50px}.menuItems{box-shadow:0 6px 12px rgba(0,0,0,.175)}.menuItem:hover{background:#f5f5f5}
-/*# sourceMappingURL=main.ed9ffb98.css.map*/
