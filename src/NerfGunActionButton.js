@@ -9,6 +9,7 @@ class NerfGunActionButton extends Component {
   };
 
   handleClick = e => this.setState({menuActive: !this.state.menuActive});
+
   handleLaunch = (nerfGunId, nrOfDarts) => e => {
     e.preventDefault();
     this.props.launchDarts(nerfGunId, nrOfDarts)
@@ -43,7 +44,6 @@ class NerfGunActionButton extends Component {
     const menuItems = [];
 
     for(var i=0; i < 3; i++){
-      // menuItems.push(<li key={i}><a href="#" onClick={this.handleLaunch.bind(this, i + 1)}>{i + 1} Dart{i > 0 ? 's' : ''}</a></li>);
       menuItems.push(<a
         key={i}
         href="#!"

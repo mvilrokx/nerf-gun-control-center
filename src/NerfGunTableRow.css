@@ -1,0 +1,3 @@
+.NerfGunTableRow:nth-child(odd) {
+  background-color: #eeeeee;
+}
